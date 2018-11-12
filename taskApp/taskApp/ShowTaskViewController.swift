@@ -20,7 +20,8 @@ class ShowTaskViewController: UIViewController {
     //initialized then able to be manipulated
     
     //var switchWasPressedCallBack: (() -> Void)?
-    //making an optional call back
+    //cant making an optional call back
+    
     weak var delegate: CheckTaskDelegate?//made a delegate
     
     @IBOutlet weak var outputLabel: UILabel!//label
@@ -38,16 +39,21 @@ class ShowTaskViewController: UIViewController {
         }
         
         //put string into variable
-        
-        
+        outputLabel.text = userNotes
+
         
         let vc1 = TaskTableViewController()
         
         vc1.inputForEachCell.append(userNotes)
+        //appended notes and now they will be used with selecting a row
+        //to load the correct string, or at least thats the plan
+        
         //tableView.reloadData()
         outputLabel.text = userNotes
         UserDefaults.standard.set(userNotes, forKey: "userNotes")
-
+        
+       //UserDefaults.standard.set(v, forKey: "String")
+        
         
        // vc1.tableView(UITableView, cellForRowAt: IndexPath) = userNotes
 

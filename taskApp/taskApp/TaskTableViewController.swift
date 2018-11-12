@@ -91,7 +91,9 @@ class TaskTableViewController: UITableViewController ,CheckTaskDelegate{
         }else{
             tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCellAccessoryType.none
         }
-        //works in the sense that the checkmark will appear after the you checkmarked the task then entered again
+        
+        //if you select a row at the certain cell number then use the string at that index
+  
         
         
     }
@@ -101,6 +103,7 @@ class TaskTableViewController: UITableViewController ,CheckTaskDelegate{
             switchDestination.delegate = self
             
             switchStatus = UserDefaults.standard.bool(forKey: "switchState")
+           // indexString = UserDefaults.standard.array(forKey: "inputForEachCell")
             //does it get the status of the boolean value of switch
             
            //  switchDestination.task = selected

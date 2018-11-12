@@ -34,10 +34,33 @@ class ShowTaskViewControllerTests: XCTestCase {
 //    }
     func test_StringCharacterInput(){
         let task = ShowTaskViewController()
-        let plaintext = "input 123 &*@"
+       // let plaintext = "input 123 &*@"
+        task.userInput.text = "input 123 &*@"
+        
+        XCTAssertEqual("input 123 &*@", task.userInput.text)
+        //unexpectedly got nil yet have guard statement on userInput
+        
+    }
+    
+    func test_StringCharacterInput2(){
+        _ = ShowTaskViewController()
+        let plaintext = "Not Sure what else to test"
         
         
-        XCTAssertEqual("input 123 &*@", plaintext)
+        XCTAssertEqual("Not Sure what else to test", plaintext)
+        
+    }
+    
+    func test_trySwitchingSwitchStatus(){
+        let task = ShowTaskViewController()
+        let mySwitch1 = task.mySwitch.isOn
+    }
+    
+    func test_CheckingIfFalse(){
+//        if let argument = firstArgumentInClosure{
+//            XCTAssert(argument)
+//        }
+        
         
     }
     
